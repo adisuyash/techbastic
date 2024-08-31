@@ -1,0 +1,50 @@
+name: Sync with Tech Bastic
+
+on:
+  # Trigger on repository dispatch (manual trigger)
+  repository_dispatch:
+    types: [sync-upstream]
+  # Trigger manually via the GitHub Actions UI
+  workflow_dispatch:
+  # Scheduled trigger (every minute)
+  schedule:
+    - cron: '*/5 * * * *' # Runs every minute
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your forked repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Add upstream repository
+        run: |
+          git remote add upstream https://github.com/techbastic/techbastic.git
+          git fetch upstream
+          git checkout main
+
+      - name: Merge changes from upstream/main
+        run: |
+          git merge upstream/main || {
+            echo "Merge conflict detected! Aborting the merge.";
+            git merge --abort;
+            exit 1;
+          }
+
+      - name: Push changes if no conflicts
+        if: success()
+        run: |
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/adisuyash/techbastic.git main
+
+      - name: Notify of merge conflicts
+        if: failure()
+        run: |
+          echo "Merge conflict detected and merge aborted. Please resolve the conflict manually."

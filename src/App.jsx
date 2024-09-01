@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Tech Bastic</h1>
+      <h1>techbastic</h1>
       <p className="open-source">
         An open source community helping you to become a self-taught developer!
       </p>

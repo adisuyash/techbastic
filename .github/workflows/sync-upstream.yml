@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   # Scheduled trigger (every minute)
   schedule:
-    - cron: '*/5 * * * *' # Runs every minute
+    - cron: '* * * * *' # Runs every minute
 
 jobs:
   sync:

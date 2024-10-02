@@ -78,7 +78,6 @@ Create a Pull Request (PR) to the main repository. Fill out the PR template with
 1. Ensure your branch is up to date with the main repository before making a PR:
 
 ```bash
-Copy code
 git fetch upstream
 git checkout main
 git merge upstream/main

@@ -69,7 +69,7 @@ export function HeroSection() {
           className="mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 1.3 }}
         >
           <p className="text-lg text-gray-600 mb-8">
             An open-source community helping you to become a self-taught developer!

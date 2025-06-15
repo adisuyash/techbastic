@@ -2,6 +2,7 @@ import "./globals.css";
 import { Space_Mono } from "next/font/google";
 import { Navigation } from "@/components/navigation";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={spaceMono.className}>
         <SmoothScrollProvider>
+          <Analytics />
           <Navigation />
           {children}
         </SmoothScrollProvider>

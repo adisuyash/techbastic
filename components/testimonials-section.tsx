@@ -1,65 +1,77 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah Chen',
-    role: 'Full Stack Developer',
-    company: 'Tech Innovations',
-    avatar: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg',
+    name: "Sarah Chen",
+    role: "Full Stack Developer",
+    company: "Tech Innovations",
+    avatar:
+      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg",
     rating: 5,
-    content: 'TechBastic transformed my career. The community support and learning resources are incredible.',
+    content:
+      "Tech Bastic transformed my career. The community support and learning resources are incredible.",
   },
   {
     id: 2,
-    name: 'Marcus Johnson',
-    role: 'UX Designer',
-    company: 'Design Studio Pro',
-    avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
+    name: "Marcus Johnson",
+    role: "UX Designer",
+    company: "Design Studio Pro",
+    avatar:
+      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
     rating: 5,
-    content: 'The networking opportunities here are unmatched. I\'ve built lifelong friendships with fellow creatives.',
+    content:
+      "The networking opportunities here are unmatched. I've built lifelong friendships with fellow creatives.",
   },
   {
     id: 3,
-    name: 'Emily Rodriguez',
-    role: 'Data Scientist',
-    company: 'AI Solutions Inc',
-    avatar: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg',
+    name: "Emily Rodriguez",
+    role: "Data Scientist",
+    company: "AI Solutions Inc",
+    avatar:
+      "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
     rating: 5,
-    content: 'The workshops and events are top-notch. I\'ve learned cutting-edge technologies.',
+    content:
+      "The workshops and events are top-notch. I've learned cutting-edge technologies.",
   },
   {
     id: 4,
-    name: 'David Kim',
-    role: 'Frontend Developer',
-    company: 'StartupXYZ',
-    avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg',
+    name: "David Kim",
+    role: "Frontend Developer",
+    company: "StartupXYZ",
+    avatar:
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
     rating: 5,
-    content: 'Amazing community that helped me transition from a different field into tech successfully.',
+    content:
+      "Amazing community that helped me transition from a different field into tech successfully.",
   },
   {
     id: 5,
-    name: 'Lisa Wang',
-    role: 'Product Manager',
-    company: 'TechCorp',
-    avatar: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg',
+    name: "Lisa Wang",
+    role: "Product Manager",
+    company: "TechCorp",
+    avatar:
+      "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
     rating: 5,
-    content: 'The mentorship and guidance I received here was invaluable for my career growth.',
+    content:
+      "The mentorship and guidance I received here was invaluable for my career growth.",
   },
   {
     id: 6,
-    name: 'Alex Thompson',
-    role: 'DevOps Engineer',
-    company: 'CloudTech',
-    avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
+    name: "Alex Thompson",
+    role: "DevOps Engineer",
+    company: "CloudTech",
+    avatar:
+      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
     rating: 5,
-    content: 'Great platform for learning and connecting with like-minded professionals.',
+    content:
+      "Great platform for learning and connecting with like-minded professionals.",
   },
 ];
 
@@ -83,7 +95,9 @@ export function TestimonialsSection() {
   };
 
   const prevTestimonials = () => {
-    setCurrentIndex((prev) => (prev - 3 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 3 + testimonials.length) % testimonials.length
+    );
     setIsAutoPlaying(false);
   };
 
@@ -109,7 +123,8 @@ export function TestimonialsSection() {
             What Our Community Says
           </h2>
           <p className="text-lg text-gray-600">
-            Real stories from real members who've transformed their careers with TechBastic
+            Real stories from real members who've transformed their careers with
+            Tech Bastic
           </p>
         </motion.div>
 
@@ -149,7 +164,10 @@ export function TestimonialsSection() {
                       </p>
                       <div className="flex mt-1">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                          <Star
+                            key={i}
+                            className="w-3 h-3 fill-yellow-400 text-yellow-400"
+                          />
                         ))}
                       </div>
                     </div>

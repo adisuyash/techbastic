@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const navLinks = [
-  { href: '/roadmaps', label: 'Roadmaps' },
-  { href: '#events', label: 'Events' },
-  { href: '#about', label: 'About' },
-  { href: '#faq', label: 'FAQs' },
+  { href: "/roadmaps", label: "Roadmaps" },
+  { href: "#events", label: "Events" },
+  { href: "#about", label: "About" },
+  { href: "#faq", label: "FAQs" },
 ];
 
 export function Navigation() {
@@ -22,22 +22,22 @@ export function Navigation() {
       setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
-    if (href.startsWith('#')) {
+    if (href.startsWith("#")) {
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
         setIsOpen(false);
       }
     }
   };
 
   const handleNavClick = (href: string) => {
-    if (href.startsWith('#')) {
+    if (href.startsWith("#")) {
       scrollToSection(href);
     } else {
       setIsOpen(false);
@@ -47,7 +47,7 @@ export function Navigation() {
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -64,13 +64,13 @@ export function Navigation() {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-sm"></div>
             </div>
-            <span className="text-xl font-bold">TechBastic</span>
+            <span className="text-xl font-bold">Tech Bastic</span>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              link.href.startsWith('#') ? (
+            {navLinks.map((link) =>
+              link.href.startsWith("#") ? (
                 <motion.button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
@@ -91,10 +91,12 @@ export function Navigation() {
                   </motion.span>
                 </Link>
               )
-            ))}
-            <Button 
+            )}
+            <Button
               className="bg-blue-600 hover:bg-blue-700 text-white"
-              onClick={() => window.open('https://discord.com/invite/MSRnjkHcxK', '_blank')}
+              onClick={() =>
+                window.open("https://discord.com/invite/MSRnjkHcxK", "_blank")
+              }
             >
               Join Our Community
             </Button>
@@ -117,13 +119,13 @@ export function Navigation() {
           <motion.div
             className="md:hidden bg-white border-t"
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
             <div className="px-4 py-2 space-y-2">
-              {navLinks.map((link) => (
-                link.href.startsWith('#') ? (
+              {navLinks.map((link) =>
+                link.href.startsWith("#") ? (
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href)}
@@ -138,10 +140,12 @@ export function Navigation() {
                     </span>
                   </Link>
                 )
-              ))}
-              <Button 
+              )}
+              <Button
                 className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white"
-                onClick={() => window.open('https://discord.com/invite/MSRnjkHcxK', '_blank')}
+                onClick={() =>
+                  window.open("https://discord.com/invite/MSRnjkHcxK", "_blank")
+                }
               >
                 Join Our Community
               </Button>

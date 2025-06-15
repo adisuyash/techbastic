@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -50]);
@@ -32,7 +32,7 @@ export function AboutSection() {
                 className="object-cover"
               />
             </motion.div>
-            
+
             <motion.div
               style={{ y: y2 }}
               className="absolute top-12 right-0 w-56 h-72 rounded-2xl overflow-hidden shadow-xl"
@@ -44,7 +44,7 @@ export function AboutSection() {
                 className="object-cover"
               />
             </motion.div>
-            
+
             <motion.div
               style={{ y: y3 }}
               className="absolute bottom-0 left-12 w-52 h-68 rounded-2xl overflow-hidden shadow-xl"
@@ -56,7 +56,7 @@ export function AboutSection() {
                 className="object-cover"
               />
             </motion.div>
-            
+
             {/* Spacer for layout */}
             <div className="h-96"></div>
           </div>
@@ -74,13 +74,15 @@ export function AboutSection() {
                 Building the Future of Tech Together
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                TechBastic is more than just a community – we're a movement of passionate 
-                individuals who believe in the power of collaboration and continuous learning.
+                Tech Bastic is more than just a community - we&#39;re a movement
+                of passionate individuals who believe in the power of
+                collaboration and continuous learning.
               </p>
               <p className="text-lg text-gray-600">
-                Since our founding, we've connected thousands of developers, designers, and 
-                tech enthusiasts across the globe, creating opportunities for growth, 
-                innovation, and meaningful relationships.
+                Since our founding, we&#39;ve connected thousands of developers,
+                designers, and tech enthusiasts across the globe, creating
+                opportunities for growth, innovation, and meaningful
+                relationships.
               </p>
             </div>
 
@@ -93,9 +95,12 @@ export function AboutSection() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <div className="w-6 h-6 bg-green-500 rounded"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Learn</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Learn
+                </h3>
                 <p className="text-gray-600">
-                  Access cutting-edge workshops, tutorials, and resources curated by industry experts.
+                  Access cutting-edge workshops, tutorials, and resources
+                  curated by industry experts.
                 </p>
               </motion.div>
 
@@ -107,9 +112,12 @@ export function AboutSection() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <div className="w-6 h-6 bg-purple-500 rounded"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Network</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Network
+                </h3>
                 <p className="text-gray-600">
-                  Connect with like-minded professionals and build lasting relationships in tech.
+                  Connect with like-minded professionals and build lasting
+                  relationships in tech.
                 </p>
               </motion.div>
             </div>

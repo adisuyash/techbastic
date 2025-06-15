@@ -1,60 +1,68 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { FaTwitter, FaLinkedin, FaGithub, FaDiscord } from 'react-icons/fa';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Mail, ArrowRight } from 'lucide-react';
+import { motion } from "framer-motion";
+import { FaTwitter, FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Mail, ArrowRight } from "lucide-react";
 
 const footerLinks = {
   community: [
-    { name: 'Join Community', href: 'https://discord.com/invite/MSRnjkHcxK' },
-    { name: 'Events', href: '#events' },
-    { name: 'Members', href: '#' },
-    { name: 'Mentorship', href: '#' },
+    { name: "Join Community", href: "https://discord.com/invite/MSRnjkHcxK" },
+    { name: "Events", href: "#events" },
+    { name: "Members", href: "#" },
+    { name: "Mentorship", href: "#" },
   ],
   resources: [
-    { name: 'Learning Paths', href: '#' },
-    { name: 'Workshops', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Documentation', href: '#' },
+    { name: "Learning Paths", href: "#" },
+    { name: "Workshops", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Documentation", href: "#" },
   ],
   company: [
-    { name: 'About Us', href: '#about' },
-    { name: 'Careers', href: '#' },
-    { name: 'Partners', href: '#partners' },
-    { name: 'Contact', href: '#' },
+    { name: "About Us", href: "#about" },
+    { name: "Careers", href: "#" },
+    { name: "Partners", href: "#partners" },
+    { name: "Contact", href: "#" },
   ],
   support: [
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Help Center', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' },
+    { name: "FAQ", href: "#faq" },
+    { name: "Help Center", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
   ],
 };
 
 const socialLinks = [
-  { icon: FaTwitter, href: 'https://twitter.com/techbastic', label: 'Twitter' },
-  { icon: FaLinkedin, href: 'https://www.linkedin.com/company/tech-bastic/', label: 'LinkedIn' },
-  { icon: FaGithub, href: 'https://github.com/techbastic', label: 'GitHub' },
-  { icon: FaDiscord, href: 'https://discord.com/invite/MSRnjkHcxK', label: 'Discord' },
+  { icon: FaTwitter, href: "https://twitter.com/techbastic", label: "Twitter" },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/company/tech-bastic/",
+    label: "LinkedIn",
+  },
+  { icon: FaGithub, href: "https://github.com/techbastic", label: "GitHub" },
+  {
+    icon: FaDiscord,
+    href: "https://discord.com/invite/MSRnjkHcxK",
+    label: "Discord",
+  },
 ];
 
 export function Footer() {
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle newsletter subscription
-    console.log('Newsletter subscription submitted');
+    console.log("Newsletter subscription submitted");
   };
 
   const handleLinkClick = (href: string) => {
-    if (href.startsWith('#')) {
+    if (href.startsWith("#")) {
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      window.open(href, '_blank');
+      window.open(href, "_blank");
     }
   };
 
@@ -77,12 +85,13 @@ export function Footer() {
                   <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                     <div className="w-4 h-4 bg-white rounded-sm"></div>
                   </div>
-                  <span className="text-xl font-bold">TechBastic</span>
+                  <span className="text-xl font-bold">Tech Bastic</span>
                 </div>
 
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  An open-source community helping you to become a self-taught developer! 
-                  Join thousands of developers and designers building the future together.
+                  An open-source community helping you to become a self-taught
+                  developer! Join thousands of developers and designers building
+                  the future together.
                 </p>
 
                 {/* Newsletter Signup */}
@@ -98,7 +107,7 @@ export function Footer() {
                         required
                       />
                     </div>
-                    <Button 
+                    <Button
                       type="submit"
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white group"
                     >
@@ -151,7 +160,7 @@ export function Footer() {
               viewport={{ once: true }}
             >
               <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} TechBastic. All rights reserved.
+                © {new Date().getFullYear()} Tech Bastic. All rights reserved.
               </p>
             </motion.div>
 

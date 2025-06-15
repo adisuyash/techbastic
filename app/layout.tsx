@@ -10,7 +10,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata = {
-  title: "TechBastic - Learn, Build, Collaborate",
+  title: "Tech Bastic - Learn, Build, Collaborate",
   description:
     "An open-source community helping you to become a self-taught developer!",
   keywords: [
